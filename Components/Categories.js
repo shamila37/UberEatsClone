@@ -31,75 +31,35 @@ const items =[
 
 export default function Categories() {
   return (
-    <ScrollView horizontal>
-        <View style={{alignItem: "center", marginRight: 30}}>
+    <View style={{
+        marginTop: 5,
+        backgroundColor: "#fff",
+        paddingVertical: 10,
+        paddingLeft: 20,
+    }}>
+
+    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {/* loop start position */}
+        {items.map((item, index) => (
+        
+        <View key={index} style={{alignItem: "center", marginRight: 30}}>
             <Image 
-            source={items[0].image} 
+            source={item.image} 
             style={{
                 width: 50,
                 height: 40,
                 resizeMode: "contain",
             }}
             />
-            <Text style={{fontSize: 13, fontWeight: "900"}}>{items[0].text}</Text>
-        </View>
-        <View style={{alignItem: "center", marginRight: 30}}>
-            <Image 
-            source={items[0].image} 
-            style={{
-                width: 50,
-                height: 40,
-                resizeMode: "contain",
-            }}
-            />
-            <Text style={{fontSize: 13, fontWeight: "900"}}>{items[0].text}</Text>
-        </View>
-        <View style={{alignItem: "center", marginRight: 30}}>
-            <Image 
-            source={items[0].image} 
-            style={{
-                width: 50,
-                height: 40,
-                resizeMode: "contain",
-            }}
-            />
-            <Text style={{fontSize: 13, fontWeight: "900"}}>{items[0].text}</Text>
-        </View>
-        <View style={{alignItem: "center", marginRight: 30}}>
-            <Image 
-            source={items[0].image} 
-            style={{
-                width: 50,
-                height: 40,
-                resizeMode: "contain",
-            }}
-            />
-            <Text style={{fontSize: 13, fontWeight: "900"}}>{items[0].text}</Text>
-        </View>
-        <View style={{alignItem: "center", marginRight: 30}}>
-            <Image 
-            source={items[0].image} 
-            style={{
-                width: 50,
-                height: 40,
-                resizeMode: "contain",
-            }}
-            />
-            <Text style={{fontSize: 13, fontWeight: "900"}}>{items[0].text}</Text>
-        </View>
-        <View style={{alignItem: "center", marginRight: 30}}>
-            <Image 
-            source={items[0].image} 
-            style={{
-                width: 50,
-                height: 40,
-                resizeMode: "contain",
-            }}
-            />
-            <Text style={{fontSize: 13, fontWeight: "900"}}>{items[0].text}</Text>
+            <Text style={{fontSize: 13, fontWeight: "900"}}>
+                {item.text}
+            </Text>
         </View>
         
+        ))}
+        {/* loop end position */}
     </ScrollView>
-    
+
+    </View>
   )
 }
