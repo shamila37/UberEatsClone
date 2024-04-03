@@ -42,7 +42,7 @@ export default function Categories() {
         {/* loop start position */}
         {items.map((item, index) => (
         
-        <View key={index} style={{alignItem: "center", marginRight: 30}}>
+        <View key={index} style={{alignItems: "center", marginRight: 30}}>
             <Image 
             source={item.image} 
             style={{

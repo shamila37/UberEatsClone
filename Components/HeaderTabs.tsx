@@ -24,7 +24,7 @@ export default function HeaderTabs() {
   );
 }
 
-const HeaderButton = (props) => (
+const HeaderButton = (props: any) => (
     // <View>
         <TouchableOpacity style={{
             backgroundColor: props.activeTab === props.text ? 'black' : 'white',

@@ -19,33 +19,39 @@ const localRestaurents = [
         image_url: "https://wallpapers.com/images/featured/restaurant-background-2ez77umko2vj5w02.jpg",
         categories: ["Cafe", "Bar"],
         price: "$$",
-        reviews: 1244,
+        reviews: 124,
         rating: 3.7,
     },
     {
-        name: "Beachside Bar",
+        name: "Be Bar",
         image_url: "https://wallpapers.com/images/featured/restaurant-background-2ez77umko2vj5w02.jpg",
         categories: ["Cafe", "Bar"],
         price: "$$",
-        reviews: 1244,
+        reviews: 12404,
         rating: 4.5,
     },
     
 ];
 
 export default function RestaurantItem() {
+
   return (
     <TouchableOpacity activeOpacity={1} style={{marginBottom: 30}}>
         {localRestaurents.map((restaurent, index) => (
-            <View style={{
+            <View 
+            key={index}
+            style={{
                 marginTop: 10, 
                 padding: 15, 
                 backgroundColor: "white"
                 }}>
               {/* restaurent image */}
-              <RestaurantImage/>
+              <RestaurantImage image={localRestaurents[0].image_url}/>
               {/* restaurent info */}
-              <RestaurantInfo/>
+              <RestaurantInfo 
+              name={localRestaurents[0].name} 
+              rating={localRestaurents[0].rating}
+              />
             </View>
         ))}
     
@@ -53,11 +59,12 @@ export default function RestaurantItem() {
   );
   }
 
-  const RestaurantImage = () => (
+  const RestaurantImage = (props: { image: any; }) => (
     <>
     <Image source={{
-        uri: "https://wallpapers.com/images/featured/restaurant-background-2ez77umko2vj5w02.jpg"
+        uri: props.image,
     }}
+    // "https://wallpapers.com/images/featured/restaurant-background-2ez77umko2vj5w02.jpg"
     style={{width: "100%", height: 180}}
     />
     <TouchableOpacity style={{position: 'absolute', right: 20, top: 20}}>
@@ -66,7 +73,7 @@ export default function RestaurantItem() {
     </>
     );
 
-    const RestaurantInfo = () => (
+    const RestaurantInfo = (props: { rating: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }) => (
         <View style={{
             flexDirection: "row",
             justifyContent: "space-between", 
@@ -74,7 +81,7 @@ export default function RestaurantItem() {
             marginTop: 10,
             }}>
             <View>
-                <Text style={{fontSize: 15, fontWeight: "bold"}}>Farmhouse Kitchen Thai Cuisine</Text>
+                <Text style={{fontSize: 15, fontWeight: "bold"}}>props.name</Text>
                 <Text style={{fontSize: 13, color: "gray"}}>30-45 . min</Text>
             </View>
             <View style={{
@@ -85,7 +92,7 @@ export default function RestaurantItem() {
                 justifyContent: "center",
                 borderRadius: 15,
                 }}>
-                <Text>4.5</Text>
+                <Text>{props.rating}</Text>
             </View>
         </View>
     )
