@@ -77,7 +77,7 @@ export default function RestaurantItems() {
     <Image source={{
         uri: props.image,
     }}
-    // "https://wallpapers.com/images/featured/restaurant-background-2ez77umko2vj5w02.jpg"
+    
     style={{width: "100%", height: 180}}
     />
     <TouchableOpacity style={{position: 'absolute', right: 20, top: 20}}>
