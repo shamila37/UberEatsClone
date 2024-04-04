@@ -3,9 +3,7 @@ import React, { ReactNode } from 'react'
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Categories from './Categories';
 
-
-
-const localRestaurents = [
+export const localRestaurents = [
     {
         name: "Beachside Bar",
         image_url: "https://wallpapers.com/images/featured/restaurant-background-2ez77umko2vj5w02.jpg",
@@ -48,7 +46,7 @@ const localRestaurents = [
     },
 ];
 
-export default function RestaurantItem() {
+export default function RestaurantItems() {
 
   return (
     <TouchableOpacity activeOpacity={1} style={{marginBottom: 30}}>
